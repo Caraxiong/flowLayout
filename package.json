@@ -1,0 +1,39 @@
+{
+  "name": "flowLayout",
+  "version": "1.0.0",
+  "description": "* $ webpack --display-error-details //方便出错时能查阅更详尽的信息\r * $ webpack --config XXX.js //使用另一份配置文件（比如webpack.config2.js）来打包\r * $ webpack --watch //监听变动并自动打包\r * $ webpack -p //压缩混淆脚本，这个非常非常重要！\r * $ webpack -d //生成map映射文件，告知哪些模块被最终打包到哪里了\r * $ webpack --progress //显示进度\r ***\r * babel-preset-es2015 : 2015转码规则\r * babel-preset-stage-0/1/2/3 : ES7不同阶段语法提案的转码规则（共有4个阶段）\r * babel-core : API转换核心文件\r * babel-plugin-transform-runtime : 语法转换\r * babel-polyfill : api polyfill　　\r ***\r 样式独立\r * npm install extract-text-webpack-plugin --save-dev\r config \r `var ExtractTextPlugin = require(\"extract-text-webpack-plugin\");\r plugins: [\r   new ExtractTextPlugin(\"[name].css\")\r ]\r loaders: [\r   { test: /\\.css$/, loader: ExtractTextPlugin.extract(\"css\") },\r   { test: /\\.less$/, loader: ExtractTextPlugin.extract(\"css!less\") }\r ]`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caraxiong/flowLayout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caraxiong/flowLayout/issues"
+  },
+  "homepage": "https://github.com/Caraxiong/flowLayout#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-runtime": "^5.8.34",
+    "css-loader": "^0.23.0",
+    "html-webpack-plugin": "^2.26.0",
+    "style-loader": "^0.13.1",
+    "vue-hot-reload-api": "^1.2.2",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^7.2.0",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "vue": "^1.0.13"
+  }
+}
