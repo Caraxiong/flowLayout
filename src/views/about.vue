@@ -12,6 +12,8 @@
 	</div>
 </template>
 <script>
+	require('../css/about.less');
+	require('../css/about.scss');
 	module.exports = {
 		data: function () {
 			return {
@@ -22,18 +24,6 @@
 		}
 	}
 </script>
-<style lang = "less">
-    @color: #00f;
-    .test-less {
-        color: @color;
-    }
-</style>
-<style lang = "sass">
-    $color: #0ff;
-    .test-sass {
-        color: $color;
-    }
-</style>
 <style lang = "stylus">
     color = #f00;
     .test-stylus {
