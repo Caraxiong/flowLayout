@@ -1,6 +1,6 @@
 $fontSize: 14px;
 $colorFont666: #666;
-$linkColor: #08c #333 !default;//第一个值为默认值，第二个为hover值
+$linkColor: #d88 #d00 !default;//第一个值为默认值，第二个为hover值
 .pabel{
 	display: flex;
   	flex-direction: column;
@@ -37,6 +37,9 @@ $linkColor: #08c #333 !default;//第一个值为默认值，第二个为hover值
 			&.light{
 				background-color: nth($linkColor, 2);
 			}
+			&.noLight{
+				background-color: nth($linkColor, 1);
+			}
 		}
 	}
 }
@@ -58,3 +61,13 @@ $linkColor: #08c #333 !default;//第一个值为默认值，第二个为hover值
 .btn-r{
     border-radius: 4px;
 }
+
+// #lpt {
+//     width: 0;
+//     height: 100%;
+//     background-color: #6188f5;
+//     background-repeat: repeat-x;
+//     background-position: 0 0;
+//     background-size: 16px 8px;
+//     background-image: linear-gradient(315deg,transparent,transparent 33%,rgba(0,0,0,.12) 33%,rgba(0,0,0,.12) 66%,transparent 66%,transparent);
+// }

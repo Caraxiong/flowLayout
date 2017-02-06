@@ -8,6 +8,18 @@ module.exports = {
 		{
 			path:'/register',
 			component: resolve => require.ensure([], () => resolve(require('./views/register.vue')), 'register')
+		},
+		{
+			path:'/list',
+			component: resolve => require.ensure([], () => resolve(require('./views/list.vue')), 'list')
+		},
+		{
+			path:'/cart',
+			component: resolve => require.ensure([], () => resolve(require('./views/cart.vue')), 'cart')
+		},
+		{
+			path:'/settlement',
+			component: resolve => require.ensure([], () => resolve(require('./views/settlement.vue')), 'settlement')
 		}
 	]
 }
