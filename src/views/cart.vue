@@ -74,15 +74,16 @@
 				this.calcTotal()
 			},
 			selectOne: function(product) {
-				if(product.pChecked == undefined){
+				if(typeof product.pChecked == undefined){
 					this.$set(product,'pChecked',true)
 				}else{
 					product.pChecked = !product.pChecked
 				}
+				this.calcTotal()
 			},
 			selectAll: function() {
 				this.gridData.forEach((item,index) => {
-					if(item.pChecked == undefined){
+					if(typeof item.pChecked == undefined){
 						this.$set(item,'pChecked',this.isAllChecked)
 					}else{
 						item.pChecked = this.isAllChecked

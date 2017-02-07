@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<ul class="addr-list">
-			<li v-for="item in dataList">{{item.name}}</li>
+			<li v-for="(item, index) in lessDataList" :class="{hover: index == currentIndex }" @click="currentIndex = index">{{item.name}}</li>
 		</ul>
-		<a href="javascript:void(0)">more</a>
+		<a href="javascript:void(0)" @click="limitLen = dataList.length">more</a>
 	</div>
 </template>
 <script>
@@ -11,7 +11,14 @@
 	module.exports = {
 		data: function() {
 			return {
-				dataList:[]
+				dataList: [],
+				limitLen: 3,
+				currentIndex: 0
+			}
+		},
+		computed: {
+			lessDataList: function() {
+				return this.dataList.slice(0, this.limitLen);
 			}
 		},
 		mounted: function(){
@@ -22,7 +29,6 @@
 		methods: {
 			getList: function() {
 				this.$http.get('src/data/addr.json').then((res) => {
-					console.log(res.data)
 					this.dataList = res.data
 				})
 			}
