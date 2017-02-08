@@ -20,6 +20,10 @@ module.exports = {
 		{
 			path:'/settlement',
 			component: resolve => require.ensure([], () => resolve(require('./views/settlement.vue')), 'settlement')
+		},
+		{
+			path:'/home',
+			component: resolve => require.ensure([], () => resolve(require('./views/home.vue')), 'home')
 		}
 	]
 }

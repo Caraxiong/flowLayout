@@ -5,6 +5,7 @@
 			<router-link to="/register" class="link-2">register</router-link>
 			<router-link to="/list" class="link-3">list</router-link>
 			<router-link to="/cart" class="link-4">cart</router-link>
+			<router-link to="/home" class="link-4">home</router-link>
 		</div>
 		<div>
 			<router-view></router-view>

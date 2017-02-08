@@ -1,0 +1,19 @@
+[{
+	"img" : "src/imgs/home/icon1_trans.jpg",
+	"ie8img" : "src/imgs/home/icon1.jpg"
+},{
+	"img" : "src/imgs/home/icon2_trans.jpg",
+	"ie8img" : "src/imgs/home/icon2.jpg"
+},{
+	"img" : "src/imgs/home/icon3_trans.jpg",
+	"ie8img" : "src/imgs/home/icon3.jpg"
+},{
+	"img" : "src/imgs/home/icon4_trans.jpg",
+	"ie8img" : "src/imgs/home/icon4.jpg"
+},{
+	"img" : "src/imgs/home/icon5_trans.jpg",
+	"ie8img" : "src/imgs/home/icon5.jpg"
+},{
+	"img" : "src/imgs/home/icon6_trans.jpg",
+	"ie8img" : "src/imgs/home/icon6.jpg"
+}]

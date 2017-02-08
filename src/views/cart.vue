@@ -41,6 +41,7 @@
 </template>
 <script>
 	require('../style/cart.scss');
+	import axios from 'axios';
 	module.exports = {
 		data: function() {
 			return {
@@ -56,10 +57,16 @@
 		},
 		methods: {
 			getList: function() {
-				this.$http.get('src/data/cart.json').then((res) => {
-					// this.$set('gridData',res.body.list)
-					this.gridData = res.body.list
-				})
+				// vue-resource
+				// this.$http.get('src/data/cart.json').then((res) => {
+				// 	// this.$set('gridData',res.body.list)
+				// 	this.gridData = res.body.list
+				// })
+				// axios
+				axios.get('src/data/cart.json')
+					.then((res) => {
+						this.gridData = res.data.list
+					})
 			},
 			changeNum: function(product,num) {
 				if(num > 0){
