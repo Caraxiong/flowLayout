@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<div class="ali-main-market">
 		<div class="home-p">
-			<a href="javascript:void(0)" class="home-li" v-for = "item in imgList" @mouseover="isHover = true" @mouseout="isHover = false">
-				<span :style="{'background-image':'url('+item.img+')'}" :class="{hover:isHover}"></span>
+			<a href="javascript:void(0)" class="home-li" v-for = "item in imgList">
+				<span :data-imag="item.img" :data-ie8img="item.ie8img" :style="{'background-image':'url('+item.img+')'}" :class="{hover:isHover}"></span>
 			</a>
 		</div>
 	</div>
@@ -14,7 +14,8 @@
 		data: function(){
 			return {
 				imgList: [],
-				isHover:false
+				isHover:false,
+				indexBanner_isIE9: false
 			}
 		},
 		mounted: function(){
