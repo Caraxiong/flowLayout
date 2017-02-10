@@ -1,6 +1,67 @@
-.home-p{
+.aly-ul{
+	font-family: "微软雅黑";
 	display: flex;
-	a.home-li{
+	list-style-type: none;
+	li{
+		flex:1;
+		height: 130px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		padding: 5px;
+		transition: all 2s;
+		&.odd{
+			background-color: #ebebec;
+		}
+		&.even{
+			background-color: #e2e2e3;
+		}
+		h2{
+			transition: all 2s;
+			font-size: 18px;
+			position: relative;
+			left: 5px;
+		}
+		h3{
+			transition: all 2s;
+			font-size: 14px;
+			position: relative;
+			left: 20px;
+		}
+		span{
+			font-size: 14px;
+			position: relative;
+		}
+		&:hover{
+			h2{
+				left: 10px;
+			}
+			h3{
+				left: 5px;
+			}
+			span{
+
+			}
+		}
+		.aly-info{
+			position: relative;
+			z-index: 1;
+		}
+		.aly-img{
+			background: no-repeat 0 0;
+			background-size: 175px;
+		    width: 175px;
+    		height: 175px;
+			position: absolute;
+		    right: -45px;
+    		top: -5px;
+    		z-index: 0;
+		}
+	}
+}
+.aly-p{
+	display: flex;
+	a.aly-li{
 		flex:1;
 		display: flex;
 		height: 100px;
