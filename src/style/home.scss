@@ -6,14 +6,27 @@
 		height: 100px;
 		span{
 			display: block;
-			width: 150px;
-			height: 150px;
+			width: 75px;
+			height: 75px;
 			margin: auto;
-			background: 0 0 no-repeat center;
-			transition: all 2s; 
-			&.isHover{
-				background-position:0 -4425px;
-			}
+			background: no-repeat 0 0;
+			background-size: 75px;
+			// transition: all 0.5s; 
+			// &.fade-transition{
+			// 	background-position:0 0;
+			// }
+			// &.fade-enter{
+			// 	background-position:0 -4425px;
+			// }
 		}
 	}
+}
+.progress{
+ 	width: 0;
+    height: 100%;
+    background-color: #6188f5;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: 16px 16px;
+    background-image: linear-gradient(315deg,transparent,transparent 33%,rgba(0,0,0,.12) 33%,rgba(0,0,0,.12) 66%,transparent 66%,transparent);
 }
