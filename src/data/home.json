@@ -1,4 +1,24 @@
-{
+{	
+	"slideList" : [{
+		"img" : "src/imgs/home/slide1.jpg" 
+	},{
+		"img" : "src/imgs/home/slide2.jpg" 
+	},{
+		"img" : "",
+		"img1" : "src/imgs/home/slide3-m.png",
+		"img2" : "src/imgs/home/slide3-b.png",
+		"img3" : "src/imgs/home/slide3-w.png"
+	},{
+		"img" : "",
+		"img1" : "src/imgs/home/slide4-m.png",
+		"img2" : "src/imgs/home/slide4-b.png",
+		"img3" : "src/imgs/home/slide4-w.png"
+	},{
+		"img" : "",
+		"img1" : "src/imgs/home/slide5-m.png",
+		"img2" : "src/imgs/home/slide5-b.png",
+		"img3" : "src/imgs/home/slide5-w.png"
+	}],
 	"poemList" :[{
 		"name" : "望庐山瀑布",
 		"poem" : "日照香炉生紫烟，遥看瀑布挂前川。",

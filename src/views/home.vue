@@ -1,5 +1,27 @@
 <template>
 	<div>
+		<div class="banner-container dark">
+			<div class="inner-banner-container dark">
+				<div class="banner-group" v-for="(item,index) in slideList" :class="{'active':index == curIndex}" @mouseover = "stopSlide()" @mouseout = "loopSlide()" @mousemove="moveImg($event)">
+					<div ref='div' class="inner-banner-group">
+						<div class="banner-row">
+							<div class="layer w-100" v-if="item.img">
+								<img :src="item.img">
+							</div>
+							<div class="layer w-pic" v-if="!item.img">
+								<img :src="item.img1">
+								<img :src="item.img2">
+								<img :src="item.img3">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="banner-menus">
+				<li class="banner-menu" v-for="(item,index) in slideList" :class="{'active':index == curIndex}" @click="changeSlide(index)">
+				</li>
+			</ul>
+		</div>
 		<ul class="aly-ul">
 			<li v-for = "(item, index) in poemList" :class="{'odd': index%2==1,'even': index%2 ==0}" @mouseover="trans($event ,1, 175)" @mouseout="trans($event ,-1, 175)">
 				<div class="aly-info">
@@ -29,7 +51,12 @@
 			return {
 				imgList: [],
 				poemList: [],
-				isHover:false
+				slideList: [],
+				interValTime: '',
+				isHover:false,
+				curIndex:0,
+				moveX:'',
+				moveY:''
 			}
 		},
 		mounted: function(){
@@ -43,6 +70,10 @@
 					.then((res) => {
 						this.imgList = res.data.iconList
 						this.poemList = res.data.poemList
+						this.slideList = res.data.slideList
+
+						//运行slide
+						this.loopSlide()
 					})
 			},
 			scrollBar: function() {
@@ -60,11 +91,6 @@
 				    }
 				}
 				requestAnimationFrame(step);
-				// document.getElementById("run").addEventListener("click", function() {
-				//     ele.style.width = "1px";
-				//     progress = 0;
-				//     requestAnimationFrame(step);
-				// }, false);
 			},
 			trans: function(event, num, distance){
 				window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -92,6 +118,33 @@
 					requestAnimationFrame(stepMinus);
 				}
 				
+			},
+			//循环运行slide
+			loopSlide: function(){
+				this.interValTime = setInterval(() => {
+					this.curIndex += 1
+					if(this.curIndex >= this.slideList.length){
+						this.curIndex = 0
+					}
+				},5000);
+			},
+			changeSlide: function(index) {
+				clearInterval(this.interValTime)
+				this.curIndex = index
+				this.loopSlide()
+			},
+			stopSlide: function(){
+				clearInterval(this.interValTime)
+				
+			},
+			moveImg: function(e){
+				// 动画效果
+				let w =  document.body.clientWidth
+				let h =  document.body.clientHeight
+				this.moveX = (e.pageX/w - .5) || 10
+				this.moveY = -(e.pageY/h - .5) || 10
+				this.$refs.div[this.curIndex].style.transform ="rotateX("+this.moveX+"deg) rotateY("+this.moveY+"deg)"
+				console.log(this.$refs.div[this.curIndex].style.transform)
 			}
 		}
 	}
