@@ -9,9 +9,15 @@
 								<img :src="item.img">
 							</div>
 							<div class="layer w-pic" v-if="!item.img">
-								<img :src="item.img1">
-								<img :src="item.img2">
-								<img :src="item.img3">
+								<div class="layer1">
+									<img :src="item.img1">
+								</div>
+								<div class="layer2">
+									<img :src="item.img2">
+								</div>
+								<div class="layer3">
+									<img :src="item.img3">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -56,7 +62,9 @@
 				isHover:false,
 				curIndex:0,
 				moveX:'',
-				moveY:''
+				moveY:'',
+				lastMoveX:'',
+				lastMoveY:''
 			}
 		},
 		mounted: function(){
@@ -141,8 +149,10 @@
 				// 动画效果
 				let w =  document.body.clientWidth
 				let h =  document.body.clientHeight
-				this.moveX = (e.pageX/w - .5) || 10
-				this.moveY = -(e.pageY/h - .5) || 10
+				this.moveX = (e.pageX/w - .5)*this.lastMoveX || 10
+				this.moveY = -(e.pageY/h - .5)*this.lastMoveX  || 10
+				this.lastMoveX = this.moveX
+				this.lastMoveX = this.moveY
 				this.$refs.div[this.curIndex].style.transform ="rotateX("+this.moveX+"deg) rotateY("+this.moveY+"deg)"
 				console.log(this.$refs.div[this.curIndex].style.transform)
 			}

@@ -128,9 +128,22 @@
 			    right: 0;
 			    bottom: 0;
 			    transition: all 0.5s ease-out;
+		        transform-style: preserve-3d;
 	        }
 			.banner-row{
 				.layer{
+					.layer1{
+						transform: translateZ(50px);
+						animation: re-banner-slide-80 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
+					}
+					.layer2{
+    					transform: translateZ(100px);
+  						animation: re-banner-slide-40 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
+					}
+					.layer3{
+						transform: translateZ(150px);
+  						animation: re-banner-slide-60 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0s 1;
+					}
 					&.w-100{
 						img{
 							width: 100%;
