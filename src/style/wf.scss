@@ -1,0 +1,16 @@
+.wf-main{
+	margin:0 auto;
+	.pic{
+		float: left;
+	    width: 165px;
+	    padding:15px 0 0 15px;
+	    position: relative;
+		.img{
+			border:1px solid #ccc;
+			box-shadow: 0 0 2px #ccc;
+			img{
+				width: 100%;
+			}
+		}
+	}
+}

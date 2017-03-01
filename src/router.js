@@ -24,6 +24,10 @@ module.exports = {
 		{
 			path:'/home',
 			component: resolve => require.ensure([], () => resolve(require('./views/home.vue')), 'home')
+		},
+		{
+			path:'/waterFall',
+			component: resolve => require.ensure([], () => resolve(require('./views/waterFall.vue')), 'waterFall')
 		}
 	]
 }
