@@ -51,7 +51,7 @@
 </template>
 <script>
 	require('../style/home.scss');
-	import axios from 'axios'
+	// import axios from 'axios'
 	module.exports = {
 		data: function(){
 			return {
@@ -74,15 +74,15 @@
 		},
 		methods: {
 			getMsg: function() {
-				axios.get('src/data/home.json')
-					.then((res) => {
-						this.imgList = res.data.iconList
-						this.poemList = res.data.poemList
-						this.slideList = res.data.slideList
+				// axios.get('src/data/home.json')
+				// 	.then((res) => {
+						this.imgList = require('../data/home.json').iconList
+						this.poemList =require('../data/home.json').poemList
+						this.slideList = require('../data/home.json').slideList
 
 						//运行slide
 						this.loopSlide()
-					})
+					// })
 			},
 			scrollBar: function() {
 				window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;

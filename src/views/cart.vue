@@ -41,7 +41,7 @@
 </template>
 <script>
 	require('../style/cart.scss');
-	import axios from 'axios';
+	// import axios from 'axios';
 	module.exports = {
 		data: function() {
 			return {
@@ -63,10 +63,11 @@
 				// 	this.gridData = res.body.list
 				// })
 				// axios
-				axios.get('src/data/cart.json')
-					.then((res) => {
-						this.gridData = res.data.list
-					})
+				// axios.get('src/data/cart.json')
+				// 	.then((res) => {
+						this.gridData = require('../data/cart.json').list
+						console.log(require('../data/cart.json'))
+					// })
 			},
 			changeNum: function(product,num) {
 				if(num > 0){

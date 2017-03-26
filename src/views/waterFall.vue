@@ -9,7 +9,7 @@
 </template>
 <script>
 	require('../style/wf.scss');
-	import axios from 'axios'
+	// import axios from 'axios'
 	module.exports = {
 		data: function(){
 			return {
@@ -50,10 +50,10 @@
 		// },
 		methods: {
 			getImgs: function() {
-				axios.get('src/data/wf.json')
-					.then((res) => {
-						this.imgLists = res.data
-					})
+				// axios.get('src/data/wf.json')
+				// 	.then((res) => {
+						this.imgLists = require('../data/wf.json')
+					// })
 			},
 			//图片排位置
 			sortImgs: function() {
